@@ -17,7 +17,7 @@ public class Hook {
         MyDriver.get().get(ConfigurationReader.getProperty("Url"));
         MyDriver.get().manage().deleteAllCookies();
     }
-
+/*
     @After
     public void teardown(Scenario scenario){
         //if test failed - do this
@@ -33,5 +33,5 @@ public class Hook {
         //after every test, we gonna close browser
        MyDriver.close();
     }
-
+*/
 }

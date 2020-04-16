@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="kayakCom" target="7" />
+      <module name="kayakCom" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

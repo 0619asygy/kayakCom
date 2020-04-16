@@ -10,17 +10,29 @@
 
     <!-- Copied the dependencies and some plugins from another project to save time. Some might not be used in this use case   -->
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>3.7.1</version>
+            <!--            <scope>test</scope>-->
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.0.1</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -30,6 +42,8 @@
             <version>4.7.4</version>
         </dependency>
 
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
@@ -39,37 +53,34 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.29</version>
+            <version>1.7.21</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
             <scope>test</scope>
         </dependency>
 
-
         <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>4.0.1</version>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.3.0</version>
         </dependency>
 
-
     </dependencies>
-
-
-    <!--    -->
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M1</version>
+                <version>3.0.0-M3</version>
                 <configuration>
-                    <parallel>method</parallel>
-                    <forkMode>perthread</forkMode>
-                    <threadCount>5</threadCount>
                     <includes>
-                        <include>**/*Runner*.java</include>
-                        <testFailureIgnore>true</testFailureIgnore>
+                        <include>**/CucumberRunner.java</include>
                     </includes>
-
+                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
+                    <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
             </plugin>
             <plugin>
@@ -85,7 +96,7 @@
                         </goals>
                         <configuration>
                             <projectName>Cucumber HTML Reports</projectName>
-                            <outputDirectory>${project.build.directory}/myReports</outputDirectory>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
                                 <param>**/cucumber*.json</param>
@@ -94,15 +105,34 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>RegressionRunner</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M3</version>
+                        <configuration>
+
+                            <parallel>methods</parallel>
+                            <perCoreThreadCount>false</perCoreThreadCount>
+                            <threadCountMethods>2</threadCountMethods>
+
+                            <includes>
+                                <include>**/RegressionRunner.java</include>
+                            </includes>
+                            <testFailureIgnore>false</testFailureIgnore>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

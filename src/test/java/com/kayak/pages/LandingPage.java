@@ -13,7 +13,7 @@ public class LandingPage  extends BasePage{
     @FindBy(xpath = "//input[@aria-label='Flight origin input']")
     public WebElement originBox;
 
-    @FindBy(xpath = "(//input[@aria-label='Flight destination input'])[2]")
+    @FindBy(xpath = "//input[@aria-label='Flight destination input']")
     public WebElement destinationBox;
 
     @FindBy(xpath = "//div[@class='_iac _irF _Hk _h-8']/button")

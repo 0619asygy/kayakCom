@@ -4,6 +4,7 @@ import com.kayak.pages.LandingPage;
 import com.kayak.utilities.MyDriver;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 
 public class SearchPageSteps {
     LandingPage landingPage = new LandingPage();
@@ -20,11 +21,12 @@ public class SearchPageSteps {
 
 
         landingPage.xIcon.click();
-        landingPage.originBox.sendKeys(origin);
+        landingPage.originBox.sendKeys(origin, Keys.ENTER);
         landingPage.Wait();
-        JavascriptExecutor js = (JavascriptExecutor)MyDriver.get();
-        js.executeScript("arguments[0].setAttribute('value', '"+destination+"')", landingPage.destinationBox);
 
+        JavascriptExecutor js = (JavascriptExecutor)MyDriver.get();
+        js.executeScript("arguments[0].setAttribute('value', '"+destination+"')", landingPage.destinationBox );
+        landingPage.Wait();
         System.out.println("Entering Destination city");
 
         System.out.println("Entering Origin city : " + origin);
