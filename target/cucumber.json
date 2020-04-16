@@ -1,0 +1,126 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-04-16T17:27:10.312Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3396833542,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.setup()"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "user goes to kayak.com website and makes a search",
+        "description": "",
+        "id": ";user-goes-to-kayak.com-website-and-makes-a-search;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 128276618,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.teardown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 20302614,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user is in landing page",
+            "match": {
+              "location": "SearchPageSteps.user_is_in_landing_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1259939753,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user enters \"New York\" and \"Dallas\" cities",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"New York\"",
+                  "offset": 12
+                },
+                {
+                  "val": "\"Dallas\"",
+                  "offset": 27
+                }
+              ],
+              "location": "SearchPageSteps.user_enters_and_cities(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 794650,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "enters \"4/20/2020\" and \"4/25/2020\" dates",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"4/20/2020\"",
+                  "offset": 7
+                },
+                {
+                  "val": "\"4/25/2020\"",
+                  "offset": 23
+                }
+              ],
+              "location": "SearchPageSteps.enters_and_dates(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 518729,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "click search",
+            "match": {
+              "location": "SearchPageSteps.click_search()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 353972,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "results page loads with results",
+            "match": {
+              "location": "SearchPageSteps.results_page_loads_with_results()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Kayak.feature",
+    "tags": []
+  }
+]

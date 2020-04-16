@@ -9,5 +9,8 @@
         <module name="kayakCom" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kayakCom" target="7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
