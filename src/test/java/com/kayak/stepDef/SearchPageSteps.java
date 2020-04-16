@@ -3,7 +3,6 @@ package com.kayak.stepDef;
 import com.kayak.pages.LandingPage;
 import com.kayak.utilities.MyDriver;
 import io.cucumber.java.en.*;
-import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 
 public class SearchPageSteps {

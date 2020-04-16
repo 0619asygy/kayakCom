@@ -3,7 +3,7 @@ package com.kayak.pages;
 import com.kayak.utilities.MyDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.util.concurrent.TimeUnit;
 
