@@ -9,7 +9,5 @@ Feature:
     Examples:
       | Origin      | Destination | Departure | Return    |
       | New York    | Dallas      | 4/20/2020 | 4/25/2020 |
-      | Atlanta     | Charlotte   | 4/26/2020 | 4/29/2020 |
-      | Los Angeles | El Paso     | 4/30/2020 | 5/20/2020 |
 
 

@@ -31,7 +31,7 @@ public class Hook {
         }
         System.out.println("##############################");
         //after every test, we gonna close browser
-      //  MyDriver.close();
+       MyDriver.close();
     }
 
 }

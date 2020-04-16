@@ -49,6 +49,7 @@ formatter.examples({
         "4/20/2020",
         "4/25/2020"
       ]
+<<<<<<< HEAD
     },
     {
       "cells": [
@@ -65,6 +66,8 @@ formatter.examples({
         "4/30/2020",
         "5/20/2020"
       ]
+=======
+>>>>>>> 2fcc9acf6d1cd6d4971bd21875ce79b40f0620e0
     }
   ]
 });
@@ -94,8 +97,12 @@ formatter.match({
   "location": "SearchPageSteps.user_enters_and_cities(String,String)"
 });
 formatter.result({
+<<<<<<< HEAD
   "error_message": "java.lang.NullPointerException\r\n\tat com.kayak.stepDef.SearchPageSteps.user_enters_and_cities(SearchPageSteps.java:21)\r\n\tat ✽.user enters \"New York\" and \"Dallas\" cities(file:src/test/resources/features/Kayak.feature:5)\r\n",
   "status": "failed"
+=======
+  "status": "passed"
+>>>>>>> 2fcc9acf6d1cd6d4971bd21875ce79b40f0620e0
 });
 formatter.step({
   "name": "enters \"4/20/2020\" and \"4/25/2020\" dates",
@@ -105,6 +112,7 @@ formatter.match({
   "location": "SearchPageSteps.enters_and_dates(String,String)"
 });
 formatter.result({
+<<<<<<< HEAD
   "status": "skipped"
 });
 formatter.step({
@@ -170,6 +178,10 @@ formatter.match({
 formatter.result({
   "status": "skipped"
 });
+=======
+  "status": "passed"
+});
+>>>>>>> 2fcc9acf6d1cd6d4971bd21875ce79b40f0620e0
 formatter.step({
   "name": "click search",
   "keyword": "And "
@@ -178,6 +190,7 @@ formatter.match({
   "location": "SearchPageSteps.click_search()"
 });
 formatter.result({
+<<<<<<< HEAD
   "status": "skipped"
 });
 formatter.step({
@@ -244,6 +257,11 @@ formatter.result({
   "status": "skipped"
 });
 formatter.step({
+=======
+  "status": "passed"
+});
+formatter.step({
+>>>>>>> 2fcc9acf6d1cd6d4971bd21875ce79b40f0620e0
   "name": "results page loads with results",
   "keyword": "Then "
 });
@@ -251,9 +269,14 @@ formatter.match({
   "location": "SearchPageSteps.results_page_loads_with_results()"
 });
 formatter.result({
+<<<<<<< HEAD
   "status": "skipped"
 });
 formatter.embedding("image/png", "embedded2.png", null);
+=======
+  "status": "passed"
+});
+>>>>>>> 2fcc9acf6d1cd6d4971bd21875ce79b40f0620e0
 formatter.after({
   "status": "passed"
 });

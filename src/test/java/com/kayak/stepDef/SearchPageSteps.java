@@ -1,8 +1,10 @@
 package com.kayak.stepDef;
 
 import com.kayak.pages.LandingPage;
+import com.kayak.utilities.MyDriver;
 import io.cucumber.java.en.*;
 import org.junit.Test;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class SearchPageSteps {
     LandingPage landingPage = new LandingPage();
@@ -17,9 +19,12 @@ public class SearchPageSteps {
     public void user_enters_and_cities(String origin, String destination) {
         System.out.println("Entering Origin city");
 
-        landingPage.originBox.sendKeys(origin);
-        landingPage.destinationBox.sendKeys(destination);
 
+        landingPage.xIcon.click();
+        landingPage.originBox.sendKeys(origin);
+        landingPage.Wait();
+        JavascriptExecutor js = (JavascriptExecutor)MyDriver.get();
+        js.executeScript("arguments[0].setAttribute('value', '"+destination+"')", landingPage.destinationBox);
 
         System.out.println("Entering Destination city");
 
